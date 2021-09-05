@@ -1,4 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+
 body {
-  background: #141414;
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgb(8, 31, 107) 60%, rgba(13,19,124,1) 100%);
   color: #ffff
+}
+
+#main_title {
+  font-family: 'Slabo 27px', serif;
+  letter-spacing: 1.5px;
+  padding-left: 0;
+}
+
+#main_title_icon {
+  width:45px;
+  height: 45px;
+  margin: 0 15px 5px 0;
+}
+
+.priceDown {
+  border-radius: 2px;
+  animation: fadeDown 3s forwards;
+  background-color:rgb(240, 62, 62);
+}
+
+@keyframes fadeDown {
+  from {background-color:rgb(240, 62, 62);}
+  to {background-color:rgba(242, 245, 169, 0);}
+}
+
+.priceUp {
+  border-radius: 2px;
+  animation: fadeUp 3s forwards;
+  background-color:rgb(62, 240, 77);
+}
+
+@keyframes fadeUp {
+  from {  background-color:rgb(62, 240, 77);}
+  to {background-color:rgba(242, 245, 169, 0);}
+}
+
+@keyframes ui-progress-spinner-color {
+  100%,
+  0% {
+      stroke: #343292;
+  }
+  40% {
+      stroke: #f5f8fd;
+  }
+  66% {
+      stroke: #a2eaf3;
+  }
+  80%,
+  90% {
+      stroke: #6a22a5;
+  }
 }
