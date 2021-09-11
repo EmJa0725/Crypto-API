@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Crypto-API/static/css/main.ad437445.chunk.css",
+    "main.js": "/Crypto-API/static/js/main.738bee14.chunk.js",
+    "main.js.map": "/Crypto-API/static/js/main.738bee14.chunk.js.map",
+    "runtime-main.js": "/Crypto-API/static/js/runtime-main.09bdb4b1.js",
+    "runtime-main.js.map": "/Crypto-API/static/js/runtime-main.09bdb4b1.js.map",
+    "static/css/2.7c223756.chunk.css": "/Crypto-API/static/css/2.7c223756.chunk.css",
+    "static/js/2.6506b0cb.chunk.js": "/Crypto-API/static/js/2.6506b0cb.chunk.js",
+    "static/js/2.6506b0cb.chunk.js.map": "/Crypto-API/static/js/2.6506b0cb.chunk.js.map",
+    "static/js/3.05c47826.chunk.js": "/Crypto-API/static/js/3.05c47826.chunk.js",
+    "static/js/3.05c47826.chunk.js.map": "/Crypto-API/static/js/3.05c47826.chunk.js.map",
+    "index.html": "/Crypto-API/index.html",
+    "static/css/2.7c223756.chunk.css.map": "/Crypto-API/static/css/2.7c223756.chunk.css.map",
+    "static/css/main.ad437445.chunk.css.map": "/Crypto-API/static/css/main.ad437445.chunk.css.map",
+    "static/js/2.6506b0cb.chunk.js.LICENSE.txt": "/Crypto-API/static/js/2.6506b0cb.chunk.js.LICENSE.txt",
+    "static/media/cryptocurrency.091026b3.svg": "/Crypto-API/static/media/cryptocurrency.091026b3.svg",
+    "static/media/primeicons.css": "/Crypto-API/static/media/primeicons.e61f3495.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09bdb4b1.js",
+    "static/css/2.7c223756.chunk.css",
+    "static/js/2.6506b0cb.chunk.js",
+    "static/css/main.ad437445.chunk.css",
+    "static/js/main.738bee14.chunk.js"
+  ]
+}
