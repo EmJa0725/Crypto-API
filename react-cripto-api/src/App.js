@@ -39,7 +39,7 @@ function App() {
           </span>CRYPTO MARKET PRICES
         </h1>
         <input type='text'
-          className='form-control w-25 bg-dark text-light mt-4 mb-4 text-center'
+          className='form-control bg-dark text-light mt-4 mb-4 text-center filterInput'
           placeholder='Search a Coin'
           onChange={e => setSearch(e.target.value)}
           style={filterInputStyle}

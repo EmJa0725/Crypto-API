@@ -1,4 +1,4 @@
-import { React, useState, useRef, useEffect } from 'react'
+import { React, useState, useRef, useEffect, Fragment } from 'react'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { ProgressSpinner } from 'primereact/progressspinner';
@@ -28,52 +28,70 @@ const TableCoins = ({ coins, search }) => {
     const filteredCoins = coins.filter(coin =>
         coin.name.toLowerCase().includes(search.toLowerCase()) |
         coin.symbol.toLowerCase().includes(search.toLowerCase())
-        )
+    )
+
+    const marketCapRankTemplate = ({ market_cap_rank }) => (
+        <Fragment>
+            <span className="p-column-title"> Ranking </span>
+            <span> {market_cap_rank} </span>
+        </Fragment>
     
-    const currentPriceTemplate = ({ current_price, market_cap_rank}) => {
-        const index = market_cap_rank-1;
-        priceStyle.current[index] = setStylePriceChange(
-            lastPrice.current[index]?.price, current_price, priceStyle.current[index]);   
-        return <span className={`ps-1 pe-1 ${priceStyle.current[index]}`}>$ {current_price}</span>;
-    }
-
-    const totalVolumeTemplate = ({ total_volume }) => total_volume.toLocaleString();
-
-    const nameTemplate = ({ name, image, symbol }) => {
-        return (
-            <div>
+    )
+    
+    const nameTemplate = ({ name, image, symbol }) => (
+        <Fragment>
+            <span className="p-column-title"> {titles[1]} </span>
+            <span>
                 <img src={image}
                     alt={name}
-                    style={{ width: '8%' }}
+                    style={{ width: '20px' }}
                     className="img-fluid me-4"
                 />
                 <span>{name}</span>
                 <span className="ms-3 text-mute text-uppercase">{symbol}</span>
-            </div>
-        );
-    }
+            </span>
+        </ Fragment>
+    );
 
-    const priceChangeTemplate = ({ price_change_percentage_24h }) => {
+    const currentPriceTemplate = ({ current_price, market_cap_rank }) => {
+        const index = market_cap_rank - 1;
+        priceStyle.current[index] = setStylePriceChange(
+            lastPrice.current[index]?.price, current_price, priceStyle.current[index]);
         return (
-            <div className={price_change_percentage_24h > 0 ? 'text-success' : 'text-danger'}>
+            <Fragment>
+                <span className="p-column-title"> {titles[2]} </span>
+                <span className={`pe-1 ${priceStyle.current[index]}`}>$ {current_price}</span>
+            </ Fragment>
+        )
+    }
+
+    const priceChangeTemplate = ({ price_change_percentage_24h }) => (
+        <Fragment>
+            <span className="p-column-title"> {titles[3]} </span>
+            <span className={price_change_percentage_24h > 0 ? 'text-success' : 'text-danger'}>
                 {price_change_percentage_24h.toFixed(2)} %
-            </div>
-        );
-    }
+            </span>
+        </Fragment>
+    );
 
-    const rowExpansionTemplate = ({symbol}) => {
-        return(<CoinChart symbol={symbol}/>)
-    }
-
+    const totalVolumeTemplate = ({ total_volume }) => (
+        <Fragment>
+            <span className="p-column-title"> {titles[4]} </span>
+            {total_volume.toLocaleString()}
+        </Fragment>
+    );
+    
+    const rowExpansionTemplate = ({ symbol }) => <CoinChart symbol={symbol}/>
+    
     useEffect(() => {
         lastPrice.current = coins?.map(coin => ({
-            symbol: coin.symbol, 
+            symbol: coin.symbol,
             price: coin.current_price
         }))
     }, [coins])
-
-    if (!coins.length) return <ProgressSpinner/>
-
+    
+    if (!coins.length) return <ProgressSpinner />
+    
     return (
         <DataTable
             dataKey="name"
@@ -81,16 +99,18 @@ const TableCoins = ({ coins, search }) => {
             style={tableStyle}
             expandedRows={expandedRows}
             onRowToggle={(e) => setExpandedRows(e.data)}
-            rowExpansionTemplate={rowExpansionTemplate} 
-            >
+            rowExpansionTemplate={rowExpansionTemplate}
+            className="coinsDatatable"
+        >
             <Column
                 field="market_cap_rank"
                 header={titles[0]}
-                style={{width:'3em'}}
+                className="marketCapRank"
+                body={marketCapRankTemplate}
             />
             <Column
                 expander
-                style={{ width: '3em', paddingLeft: '1px'}}
+                className="chartExpand"
             />
             <Column
                 field="name"
