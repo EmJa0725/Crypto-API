@@ -21,8 +21,8 @@ const TableCoins = ({ coins, search }) => {
 
     const setStylePriceChange = ((oldPrice, newPrice, currentStyle) => {
         if (oldPrice === newPrice) return currentStyle;
-        if (oldPrice > newPrice) return 'text-danger priceDown';
-        if (oldPrice < newPrice) return 'text-success priceUp';
+        if (oldPrice > newPrice) return 'text-danger price-down';
+        if (oldPrice < newPrice) return 'text-success price-up';
     })
 
     const filteredCoins = coins.filter(coin =>
@@ -100,7 +100,7 @@ const TableCoins = ({ coins, search }) => {
             expandedRows={expandedRows}
             onRowToggle={(e) => setExpandedRows(e.data)}
             rowExpansionTemplate={rowExpansionTemplate}
-            className="mb-5 coins-datatable"
+            className="mb-4 coins-datatable"
         >
             <Column
                 field="market_cap_rank"
