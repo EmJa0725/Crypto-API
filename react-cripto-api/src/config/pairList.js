@@ -1,3 +1,4 @@
 export const pairList = {
-    'usdt' : 'COINBASE:USDTUSD'
+    'usdt' : 'COINBASE:USDTUSD',
+    'btc'  : 'BITSTAMP:BTCUSD'
 }

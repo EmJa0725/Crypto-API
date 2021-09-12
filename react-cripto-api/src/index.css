@@ -11,36 +11,36 @@ body {
   max-width: 90%;
 }
 
-#main_title {
+#main-title {
   font-family: 'Slabo 27px', serif;
   letter-spacing: 1.5px;
   padding-left: 0;
 }
 
-#main_title_icon {
+#main-title-icon {
   width:45px;
   height: 45px;
   margin: 0 15px 5px 0;
 }
 
-.priceDown {
+.price-down {
   border-radius: 2px;
-  animation: fadeDown 2s forwards;
+  animation: fade-down 2s forwards;
   background-color:rgb(240, 62, 62);
 }
 
-@keyframes fadeDown {
+@keyframes fade-down {
   from {background-color:rgb(240, 62, 62);}
   to {background-color:rgba(242, 245, 169, 0);}
 }
 
-.priceUp {
+.price-up {
   border-radius: 2px;
-  animation: fadeUp 2s forwards;
+  animation: fade-up 2s forwards;
   background-color:rgb(62, 240, 77);
 }
 
-@keyframes fadeUp {
+@keyframes fade-up {
   from {  background-color:rgb(62, 240, 77);}
   to {background-color:rgba(242, 245, 169, 0);}
 }
@@ -62,35 +62,35 @@ body {
   }
 }
 
-.coinsDatatable .p-datatable-tbody .p-column-title {
+.coins-datatable .p-datatable-tbody .p-column-title {
   display: none;
 }
 
-.filterInput {
+.filter-input {
   width: 25%;
 }
 
-.marketCapRank {
+.marketcap-rank {
   width: 3em;
 }
 
-.chartExpand {
+.chart-expand {
   width: 3em;
   padding-left: 1px;
 }
 
 
 @media screen and (max-width: 800px) {
-  .filterInput {
+  .filter-input {
     width: 100%;
   }
-  .coinsDatatable .p-datatable-thead > tr > th,
-  .coinsDatatable .p-datatable-thead > tr > td{
+  .coins-datatable .p-datatable-thead > tr > th,
+  .coins-datatable .p-datatable-thead > tr > td{
       display: none !important;
   }
 
-  .coinsDatatable  .p-datatable-tbody tr > th,
-  .coinsDatatable  .p-datatable-tbody tr > td {
+  .coins-datatable  .p-datatable-tbody tr > th,
+  .coins-datatable  .p-datatable-tbody tr > td {
     text-align: left;
     display: block;
     margin-left: 5%;
@@ -100,7 +100,7 @@ body {
     border: 0 none;   
   }
 
-  .coinsDatatable .p-datatable-tbody > tr > td .p-column-title {
+  .coins-datatable .p-datatable-tbody > tr > td .p-column-title {
     padding: .4rem;
     min-width: 40%;
     display: inline-block;
@@ -108,38 +108,52 @@ body {
     font-weight: bold;
   }  
 
-  .marketCapRank {
+  .marketcap-rank {
     width: auto;
   }
 
-  .coinsDatatable .p-datatable-tbody > tr{
+  .coins-datatable .p-datatable-tbody > tr{
     display: flex;
     flex-direction: column;
   }
 
-  .coinsDatatable .p-datatable-tbody > tr :nth-child(1)  /* Ranking */    { order: 1; }
-  .coinsDatatable .p-datatable-tbody > tr :nth-child(2)  /* Expand */     { order: 6; }
-  .coinsDatatable .p-datatable-tbody > tr :nth-child(3)  /* Coin */       { order: 2; }
-  .coinsDatatable .p-datatable-tbody > tr :nth-child(4)  /* Price */      { order: 3; }
-  .coinsDatatable .p-datatable-tbody > tr :nth-child(5)  /* 24h Change */ { order: 4; }
-  .coinsDatatable .p-datatable-tbody > tr :nth-child(6)  /* Market Cap */ { order: 5; }
+  .coins-datatable .p-datatable-tbody > tr :nth-child(1)  /* Ranking */    { order: 1; }
+  .coins-datatable .p-datatable-tbody > tr :nth-child(2)  /* Expand */     { order: 6; }
+  .coins-datatable .p-datatable-tbody > tr :nth-child(3)  /* Coin */       { order: 2; }
+  .coins-datatable .p-datatable-tbody > tr :nth-child(4)  /* Price */      { order: 3; }
+  .coins-datatable .p-datatable-tbody > tr :nth-child(5)  /* 24h Change */ { order: 4; }
+  .coins-datatable .p-datatable-tbody > tr :nth-child(6)  /* Market Cap */ { order: 5; }
 
-  .coinsDatatable .p-datatable-tbody > tr > td:nth-child(2) {
-    border-bottom: 2px solid var(--surface-d);
+  .coins-datatable .p-datatable-tbody > tr > td:nth-child(2) {
+    border-bottom: 2px solid #1264dd;
     width: 90%;
   }
 
-  .coinsDatatable  .p-datatable-tbody .p-row-expanded  td {
+  .coins-datatable  .p-datatable-tbody .p-row-expanded  td {
     margin-left: 0;
     position: relative;
   }
 
-  .coinsDatatable  .p-datatable-tbody .p-row-expanded  td::before {
+  .coins-datatable  .p-datatable-tbody .p-row-expanded  td::before {
     content : "";
     position: absolute;
     left    : 5%;
     bottom  : 0;
     width   : 90%;  /* or 100px */
-    border-bottom: 2px solid var(--surface-d);
+    border-bottom: 2px solid #1264dd;
   }
 } 
+
+@media screen and (max-width: 500px) {
+  #main-title-icon {
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin: 0 25px 5px 0px; 
+  }
+
+  #main-title-text {
+    display: block;
+    margin-left: 50px;
+  }
+}

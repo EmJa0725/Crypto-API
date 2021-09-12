@@ -33,13 +33,14 @@ function App() {
   return (
     <div className='container'>
       <div className="row">
-        <h1 className="mt-3 text-left" id="main_title" >
+        <h1 className="mt-3 text-left" id="main-title" >
           <span>
-            <Icon id='main_title_icon' />
-          </span>CRYPTO MARKET PRICES
+            <Icon id='main-title-icon' />
+          </span>
+          <span id="main-title-text">CRYPTO MARKET PRICES</span>
         </h1>
         <input type='text'
-          className='form-control bg-dark text-light mt-4 mb-4 text-center filterInput'
+          className='form-control bg-dark text-light mt-4 mb-4 text-center filter-input'
           placeholder='Search a Coin'
           onChange={e => setSearch(e.target.value)}
           style={filterInputStyle}

@@ -100,17 +100,17 @@ const TableCoins = ({ coins, search }) => {
             expandedRows={expandedRows}
             onRowToggle={(e) => setExpandedRows(e.data)}
             rowExpansionTemplate={rowExpansionTemplate}
-            className="coinsDatatable"
+            className="mb-5 coins-datatable"
         >
             <Column
                 field="market_cap_rank"
                 header={titles[0]}
-                className="marketCapRank"
+                className="marketcap-rank"
                 body={marketCapRankTemplate}
             />
             <Column
                 expander
-                className="chartExpand"
+                className="chart-expand"
             />
             <Column
                 field="name"

@@ -2,7 +2,7 @@
   "name": "react-cripto-api",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://EmJa0725.github.io/Crypto-API",
+  "homepage": "http://EmJa0725.github.io/crypto-api",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
