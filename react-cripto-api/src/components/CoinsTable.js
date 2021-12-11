@@ -65,12 +65,15 @@ const TableCoins = ({ coins, search }) => {
         )
     }
 
-    const priceChangeTemplate = ({ price_change_percentage_24h }) => (
+    const priceChangeTemplate = ({price_change_percentage_24h}) => (
         <Fragment>
             <span className="p-column-title"> {titles[3]} </span>
-            <span className={price_change_percentage_24h > 0 ? 'text-success' : 'text-danger'}>
-                {price_change_percentage_24h.toFixed(2)} %
+            {price_change_percentage_24h != null ?
+            <span className={price_change_percentage_24h > 0? 'text-success' : 'text-danger'}>
+                {price_change_percentage_24h.toFixed(2) ?? 0} %
             </span>
+            : <span>{0}</span>
+            }
         </Fragment>
     );
 
